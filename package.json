@@ -1,0 +1,45 @@
+{
+  "name": "bikiran-ts",
+  "version": "1.0.4",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "license": "MIT",
+  "author": "Kumar Bishojit Paul",
+  "type": "module",
+  "description": "This package is utility tools for backend and frontend.",
+  "keywords": [
+    "bikiran",
+    "tools",
+    "utilities"
+  ],
+  "homepage": "https://github.com/bikirandev/bikiran-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bikirandev/bikiran-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bikirandev/bikiran-ts/issues"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
