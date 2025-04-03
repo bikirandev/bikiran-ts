@@ -1,17 +1,12 @@
 {
   "name": "bikiran-ts",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "dist",
+    "dist/package.json"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
   "license": "MIT",
   "author": "Kumar Bishojit Paul",
   "type": "module",
@@ -30,7 +25,7 @@
     "url": "https://github.com/bikirandev/bikiran-ts/issues"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "node build.cjs",
     "start": "ts-node src/index.ts",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
     "test": "jest",
