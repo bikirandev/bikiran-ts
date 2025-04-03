@@ -3,6 +3,12 @@
   "version": "1.0.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "files": [
     "dist",
     "dist/package.json"
@@ -25,7 +31,8 @@
     "url": "https://github.com/bikirandev/bikiran-ts/issues"
   },
   "scripts": {
-    "build": "node build.cjs",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "build:watch": "tsup src/index.ts --format cjs,esm --dts --watch",
     "start": "ts-node src/index.ts",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
     "test": "jest",
@@ -35,6 +42,7 @@
     "@types/node": "^22.13.9",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
+    "tsup": "^8.4.0",
     "typescript": "^5.8.2"
   }
 }
